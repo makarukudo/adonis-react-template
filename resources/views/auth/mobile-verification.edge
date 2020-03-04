@@ -1,0 +1,35 @@
+@layout('layouts.public')
+
+@section('content')
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="text-center">Mobile Verification</h1>
+
+          @if(hasErrorFor('message'))
+            <div class="alert alert-danger">
+              {{ getErrorFor('message') }}
+            </div>
+          @endif
+
+          <form class="form" action="{{ route('AuthController.mobileVerification') }}" method="post">
+            {{ csrfField() }}
+
+            <div class="form-group">
+              <label for="">Mobile</label>
+              <input type="text" name="mobile" value="{{ old('mobile') }}" class="form-control {{ elIf('is-invalid', '', hasErrorFor('mobile')) }}">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-outline-primary">Verify</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+@endsection

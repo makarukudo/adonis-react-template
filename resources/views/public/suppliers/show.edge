@@ -1,0 +1,18 @@
+@layout('layouts.public')
+
+@section('content')
+@if(supplier)
+<section class="bg-black py-5 d-flex align-items-center text-white" style="min-height: 300px">
+  <div class="container">
+    <h1>{{supplier.name}}</h1>
+  </div>
+</section>
+
+@else
+<section class="bg-black py-5 d-flex align-items-center text-white" style="min-height: 300px">
+  <div class="container">
+    <h1>We can't find the supplier</h1>
+  </div>
+</section>
+@endif
+@endsection

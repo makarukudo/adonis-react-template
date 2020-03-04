@@ -1,0 +1,19 @@
+@layout('layouts.public')
+
+@section('content')
+@if(suppliers)
+<section class="bg-black py-5 d-flex align-items-center text-white" style="min-height: 300px">
+  <div class="container">
+    @each(supplier in suppliers)
+    <h1>{{supplier.name}}</h1>
+    @endeach
+  </div>
+</section>
+@else
+<section class="bg-black py-5 d-flex align-items-center text-white" style="min-height: 300px">
+  <div class="container">
+    <h1>No suppliers yet </h1>
+  </div>
+</section>
+@endif
+@endsection

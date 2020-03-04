@@ -1,0 +1,53 @@
+@layout('layouts.public')
+
+@section('content')
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="text-center">Login</h1>
+
+          @if(hasErrorFor('message'))
+            <div class="alert alert-danger">
+              {{ getErrorFor('message') }}
+            </div>
+          @endif
+
+          <form class="form" action="{{ route('AuthController.login') }}" method="post">
+            {{ csrfField() }}
+
+            <div class="form-group">
+              <label for="">Username (mobile or email)</label>
+              <input type="text" name="username" value="{{ old('username') }}" class="form-control {{ elIf('is-invalid', '', hasErrorFor('username')) }}">
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input type="password" name="password" class="form-control {{ elIf('is-invalid', '', hasErrorFor('password')) }}">
+            </div>
+            <div class="form-group">
+              <button type="submit" name="button" class="btn btn-primary">Log In</button>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-secondary btn-google">
+                <i class="fab fa-google"></i>
+                Log in with Google
+              </button>
+            </div>
+            <div class="form-group">
+              <div class="d-flex justify-content-center links">
+                Don't have a account? &nbsp; <a href="/register">Register </a>
+              </div>
+              <div class="d-flex justify-content-center">
+                <a href="/forgot-password">Forgot password?</a>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+@endsection

@@ -1,0 +1,36 @@
+@layout('layouts.public')
+
+@section('content')
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-3">
+        <div class="card shadow">
+          <div class="card-header">
+            <a class="nav-link " href="#">Edit Profile</a>
+          </div>
+          <div class="card-body nav-myProfile-body ">
+            <ul class="nav flex-column nav-myProfile" role="tablist">
+              <li class="nav-item myProfile-item">
+                <a class="nav-link " href="#">Edit Profile</a>
+              </li>
+              <li class="nav-item myProfile-item">
+                <a class="nav-link" href="#">Verified Email</a>
+              </li>
+              <li class="nav-item myProfile-item">
+                <a class="nav-link" href="#">User Setting</a>
+              </li>
+              <li class="nav-item myProfile-item">
+                <a class="nav-link" href="#">Option</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card shadow">
+          <span>Content</span>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection

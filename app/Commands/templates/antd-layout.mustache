@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+import { Layout, Menu, Icon } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+
+function {{ name }}() {
+
+  const [state, setState] = useState({ collapsed: true })
+
+  return (
+    <Layout style={{ height: '100vh' }}>
+      <SideLinks collapsed={collapsed} />
+      <Layout>
+        <Header style={{ background: '#fff', padding: 0 }}>
+          <Icon
+            className="trigger"
+            type={state.collapsed ? 'menu-unfold' : 'menu-fold'}
+            onClick={() => setState({ ...state, collapsed: !state.collapsed })}
+          />
+        </Header>
+        <Content>
+
+        </Content>
+      </Layout>
+    </Layout>
+  )
+}
+
+export default {{ name }}
